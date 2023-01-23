@@ -10,87 +10,35 @@ function funcion_reset() {
 
     function cambiar() {
         let camino = document.getElementById("categoria").value;
-        let videos = document.getElementsByClassName("videos");
-        let discos = document.getElementsByClassName("discos");
-        let juegos  = document.getElementsByClassName("juegos");
+        let sub_categoria = document.getElementById("sub_categoria");
+
+
  
         if (camino == "videos"){
-            alert("buenas");
-            videos.style.display = "block";
-            discos.style.display = "none";
-            juegos.style.display = "none";
+            document.querySelectorAll(".juegos").forEach(a=>a.style.display = "none");
+            document.querySelectorAll(".videos").forEach(a=>a.style.display = "initial");
+            document.querySelectorAll(".discos").forEach(a=>a.style.display = "none");
+            sub_categoria.value = 'humor';
+            
         }
         if (camino == "discos"){
-            videos.style.display = "none";
-            discos.style.display = "block";
-            juegos.style.display = "none";
-            alert("bbsb");
+            document.querySelectorAll(".juegos").forEach(a=>a.style.display = "none");
+            document.querySelectorAll(".videos").forEach(a=>a.style.display = "none");
+            document.querySelectorAll(".discos").forEach(a=>a.style.display = "initial");
+            sub_categoria.value = 'pop';
         }
         if (camino == "juegos"){
-            videos.style.display = "none";
-            discos.style.display = "none";
-            juegos.style.display = "block";
-            alert("jaj");
+            document.querySelectorAll(".juegos").forEach(a=>a.style.display = "initial");
+            document.querySelectorAll(".videos").forEach(a=>a.style.display = "none");
+            document.querySelectorAll(".discos").forEach(a=>a.style.display = "none");
+            sub_categoria.value = 'simulador';
         }
-        
-    }
-    
-    function conseguir_datos() {
-        let persona = [];
-        let apellidos = document.getElementById("apellidos").value;
-        let nombre = document.getElementById("nombre").value;
-        let sexo = conseguir_input_radio();
-        let correo = document.getElementById("correo").value;
-        persona.push(apellidos);
-        persona.push(nombre);
-        persona.push(sexo);
-        persona.push(correo);
-        let info = [];
-        let mat_audiovi = document.getElementById("mat_audiovi");
-        let textos_elec = document.getElementById("textos_elec");
-        let libros = document.getElementById("libros");
-        if (mat_audiovi.checked == true){  
-            info.push("Material audiovisual");
-          }  
-          if (textos_elec.checked == true){  
-            info.push("Textos electrónicos");   
-          }  
-          if (libros.checked == true){  
-            info.push("Libros de texto"); 
-          }  
-        persona.push(info);
-        let camino = document.getElementById("camino");
-        let camino_texto = camino.options[camino.selectedIndex].innerText;
-        persona.push(camino_texto);
-        personas.push(persona);
-        return persona;
-    }
-    
-    function conseguir_datos_resumidos(){
-        let persona = conseguir_datos();
-        return persona[0] + " " + persona[1] + " Correo electrínico: " + persona[3];
+        let sub_categoria_ = document.getElementById("sub_categoria").value;
+        document.getElementById("textarea").value = "Texto de " + camino + " -> " + sub_categoria_;
     }
 
-    function conseguir_datos_completos(){
-        let num_persona = get_persona();
-        let persona = personas[num_persona];
-        return "Apellidos: " + persona[0] + "\nNombre: " + persona[1] + "\nsexo: " + persona[2] + "\nCorreo electrínico: " + persona[3] + "\nLlegó hasta aquí " + persona[5] + "\nDesea saber más información sobre: " + persona[4];
-    }
-
-    function ver_datos(){
-        if (document.getElementById("personas").value == ""){
-            alert("Debes seleccionar una persona para ver sus datos");
-        }
-        let persona = conseguir_datos_completos();
-        alert(persona);
-    }
-
-    function borrar_datos(){
-        if (document.getElementById("personas").value == ""){
-            alert("Debes seleccionar una persona para borrar sus datos");
-        }
-        let persona = document.getElementById("personas");
-        let num_persona = get_persona();
-        persona.remove(persona.selectedIndex);
-        personas.splice(num_persona, num_persona + 1);
+    function cambiar_(){
+        let camino = document.getElementById("categoria").value;
+        let sub_categoria = document.getElementById("sub_categoria").value;
+        document.getElementById("textarea").value = "Texto de " + camino + " -> " + sub_categoria;
     }

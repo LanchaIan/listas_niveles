@@ -19,7 +19,9 @@
                     <option value="juegos">Juegos</option>
                 </select>
                 <br>
-                <select class="sub_categoria" name="camino" id="sub_categoria" form="informacion">
+                <br>
+                <label for="">Género del video:</label>
+                <select class="sub_categoria" name="camino" id="sub_categoria" form="informacion" onchange="cambiar_()">
                     <option class="videos" id="videos1" value="humor">Humor</option>
                     <option class="videos" id="videos2" value="drama">Drama</option>
                     <option class="videos" id="videos3" value="ficcion">Ficción</option>
@@ -34,33 +36,9 @@
                     <option class="juegos" id="juegos4" style="display: none;" value="otros">Otros</option>
                 </select>
                 <br>
-    
-            </form>
-        </div>
-        <div class="2">
-            <form action="2">
-                <select class="discos" name="camino" id="discos" form="informacion" >
-                    <option value="pop">Pop</option>
-                    <option value="rock">Rock</option>
-                    <option value="latino">Latino</option>
-                    <option value="otros">Otros</option>
-                </select>
-                <br>
-                <select class="juegos" name="camino" id="juegos" form="informacion">
-                    <option value="simulador">Simulador</option>
-                    <option value="rol">Rol</option>
-                    <option value="mediaval">Mediaval</option>
-                    <option value="otros">Otros</option>
-                </select>
-                <br>
-    
-            </form>
-        </div>
-        <div class="botones">
-            <form action="">
-                <input class="button" type="button" value="Visualizar datos" onClick="ver_datos()">
                 <br>
             </form>
+            <textarea name="textarea" id="textarea" cols="30" rows="10">Texto de Videos -> Humor</textarea>
         </div>
     </div>
 </body>
