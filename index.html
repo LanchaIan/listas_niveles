@@ -13,19 +13,25 @@
         <div class="1">
             <form class="1" action="">
                 <label for="servicio">Servicio del videoclub:</label>
-                <select name="servicio" id="servicio" form="informacion">
-                    <option value="buscador">A través de un buscador</option>
-                    <option value="enlace">Mediante un enlace desde otra página.</option>
-                    <option value="url">Le indicaron la URL de la página</option>
-                    <option value="amigo">Al azar.</option>
+                <select name="categoria" id="categoria" form="categoria" onchange="cambiar()">
+                    <option value="videos">videos</option>
+                    <option value="discos">Discos</option>
+                    <option value="juegos">Juegos</option>
                 </select>
                 <br>
-                <label for="camino">¿Cómo llegó hasta aquí?:</label>
-                <select name="camino" id="camino" form="informacion">
-                    <option value="buscador">A través de un buscador</option>
-                    <option value="enlace">Mediante un enlace desde otra página.</option>
-                    <option value="url">Le indicaron la URL de la página</option>
-                    <option value="amigo">Al azar.</option>
+                <select class="sub_categoria" name="camino" id="sub_categoria" form="informacion">
+                    <option class="videos" id="videos1" value="humor">Humor</option>
+                    <option class="videos" id="videos2" value="drama">Drama</option>
+                    <option class="videos" id="videos3" value="ficcion">Ficción</option>
+                    <option class="videos" id="videos4" value="otros">Otros</option>
+                    <option class="discos" id="discos1" style="display: none;" value="pop">Pop</option>
+                    <option class="discos" id="discos2" style="display: none;" value="rock">Rock</option>
+                    <option class="discos" id="discos3" style="display: none;" value="latino">Latino</option>
+                    <option class="discos" id="discos4" style="display: none;" value="otros">Otros</option>
+                    <option class="juegos" id="juegos1" style="display: none;" value="simulador">Simulador</option>
+                    <option class="juegos" id="juegos2" style="display: none;" value="rol">Rol</option>
+                    <option class="juegos" id="juegos3" style="display: none;" value="mediaval">Mediaval</option>
+                    <option class="juegos" id="juegos4" style="display: none;" value="otros">Otros</option>
                 </select>
                 <br>
     
@@ -33,20 +39,18 @@
         </div>
         <div class="2">
             <form action="2">
-                <label for="camino">¿Cómo llegó hasta aquí?:</label>
-                <select name="camino" id="camino" form="informacion">
-                    <option value="buscador">A través de un buscador</option>
-                    <option value="enlace">Mediante un enlace desde otra página.</option>
-                    <option value="url">Le indicaron la URL de la página</option>
-                    <option value="amigo">Al azar.</option>
+                <select class="discos" name="camino" id="discos" form="informacion" >
+                    <option value="pop">Pop</option>
+                    <option value="rock">Rock</option>
+                    <option value="latino">Latino</option>
+                    <option value="otros">Otros</option>
                 </select>
                 <br>
-                <label for="camino">¿Cómo llegó hasta aquí?:</label>
-                <select name="camino" id="camino" form="informacion">
-                    <option value="buscador">A través de un buscador</option>
-                    <option value="enlace">Mediante un enlace desde otra página.</option>
-                    <option value="url">Le indicaron la URL de la página</option>
-                    <option value="amigo">Al azar.</option>
+                <select class="juegos" name="camino" id="juegos" form="informacion">
+                    <option value="simulador">Simulador</option>
+                    <option value="rol">Rol</option>
+                    <option value="mediaval">Mediaval</option>
+                    <option value="otros">Otros</option>
                 </select>
                 <br>
     
@@ -55,10 +59,6 @@
         <div class="botones">
             <form action="">
                 <input class="button" type="button" value="Visualizar datos" onClick="ver_datos()">
-                <br>
-                <input class="button" type="button" value="Añadir" onClick="añadir()">
-                <br>
-                <input class="button" type="button" value="Eliminar" onclick="borrar_datos()">
                 <br>
             </form>
         </div>
